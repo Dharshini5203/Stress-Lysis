@@ -1,0 +1,87 @@
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8">
+    <title>Project API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    
+  </head>
+  
+<style>
+    body {
+      background-image: url('https://mrwallpaper.com/images/file/download-green-wallpaper-59r3daw4t82rb2yo.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  
+
+    div {
+      background-color: lightgrey;
+      background-position: 500px;
+      position: absolute;
+      background-clip: padding-box;
+      width: 300px;
+      padding: 50px;
+      margin: auto;
+      opacity: 1;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)
+    }
+    h1 {
+      font: italic small-caps bold 20px Georgia, Garamond, serif;
+      text-align: center;
+      color: black;
+      font-size: 90px;
+      
+    }   
+    
+    
+  
+</style>
+
+<body>
+  <h1  style="color:rgb(115, 115, 114); font-family: Playfair Display; font: size 53px;" > <strong>Stress-Lysis</strong> </h1>
+  <div style="text-align: center"> 
+
+  
+  
+ 
+
+
+ <div class="login">
+    <h3><b>Take a moment to calculate your stress level</b></h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" /><br><br>
+
+        <input type="text" name="Temperature" placeholder="Temperature(in C)" required="required" /><br><br>
+		    <input type="text" name="Steps Count" placeholder="Total Steps" required="required" /><br><br>
+		
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+   <br>
+   <br>
+   <br>
+   <button><a href="https://mental-health-chatbot-g6gpf9jnbzwcpsmwmnymvh.streamlit.app/">Try our Chatbot Service</a></button>
+
+ </div>
+ 
+ 
+
+</div> 
+</body> 
+</html> 
